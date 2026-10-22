@@ -1,10 +1,11 @@
 # HỆ THỐNG TÀI LIỆU DỰ ÁN XE DÒ LINE (LINE FOLLOWER CAR)
 > **Vi điều khiển:** STM32F103C8T6 (ARM Cortex-M3 @ 72MHz)  
+> **Động cơ chấp hành:** 2 Động cơ DC giảm tốc kim loại **JGB37-520** (12V/6V, hộp số thép 37mm)  
 > **Bộ điều khiển động cơ:** TB6612FNG (Dual H-Bridge, PWM 1 kHz)  
 > **Cảm biến dò line:** Mảng 8 cặp LED + Quang trở (LDR) qua ADC1 + DMA1 Channel 1 Circular  
 > **Bộ nhớ cấu hình:** Flash Emulated EEPROM (Trang 63: Tự động lưu/khôi phục PID & Calib)  
 > **Màn hình & Giao diện:** OLED 0.96" I2C (SSD1306 128x64) + 4 Nút nhấn  
-> **Thuật toán chính:** PID Control + Centroid Position Estimation + FSM  
+> **Thuật toán chính:** PID Control + Centroid Position Estimation + FSM + 90° Corner Handler  
 > **Môi trường:** Keil MDK-ARM v5 (ARMCLANG v6), STM32F10x Standard Peripheral Library (SPL)
 
 ---
@@ -18,9 +19,10 @@
 | **01** | [**01_TONG_QUAN_VA_CAU_TRUC.md**](./01_TONG_QUAN_VA_CAU_TRUC.md) | Tổng quan hệ thống, môi trường build, cấu trúc file, dung lượng bộ nhớ. |
 | **02** | [**02_SO_DO_PHAN_CUNG_PINOUT.md**](./02_SO_DO_PHAN_CUNG_PINOUT.md) | Bảng tra cứu chân (Pinout), kết nối ngoại vi, kỹ thuật Remap PB3/PB4. |
 | **03** | [**03_KIEN_TRUC_PHAN_MEM_FSM.md**](./03_KIEN_TRUC_PHAN_MEM_FSM.md) | Kiến trúc phần mềm, máy trạng thái (FSM), chu kỳ thời gian thực, API module. |
-| **04** | [**04_THUAT_TOAN_PID_VA_CAM_BIEN.md**](./04_THUAT_TOAN_PID_VA_CAM_BIEN.md) | Công thức trọng số đọc cảm biến, xử lý mất vạch, toán tử PID, phân phối lực kéo. |
+| **04** | [**04_THUAT_TOAN_PID_VA_CAM_BIEN.md**](./04_THUAT_TOAN_PID_VA_CAM_BIEN.md) | Công thức trọng số đọc cảm biến, toán tử PID, giải thuật xử lý góc cua 90°. |
 | **05** | [**05_HUONG_DAN_VAN_HANH_MENU.md**](./05_HUONG_DAN_VAN_HANH_MENU.md) | Hướng dẫn thao tác 4 nút nhấn, quy trình Calib tay ngoài sân, chỉnh Menu OLED. |
 | **06** | [**06_DE_XUAT_NANG_CAP_TOI_UU.md**](./06_DE_XUAT_NANG_CAP_TOI_UU.md) | Kế hoạch tối ưu: Lưu Flash EEPROM, ADC DMA Scan, tối ưu OLED, vạch dừng đích. |
+| **07** | [**07_PHAN_TICH_DONG_CO_JGB37_VA_CAC_TRUONG_HOP_VAN_DE.md**](./07_PHAN_TICH_DONG_CO_JGB37_VA_CAC_TRUONG_HOP_VAN_DE.md) | **Phân tích chuyên sâu động cơ tải nặng JGB37-520, các trường hợp trên sân, rủi ro TB6612 và giải pháp.** |
 
 ---
 

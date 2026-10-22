@@ -92,6 +92,16 @@ void PID_CalculateMotorSpeeds(const PID_Controller_t *pid, int16_t pid_output, i
     int16_t left = eff_base - pid_output;
     int16_t right = eff_base + pid_output;
 
+    /* Bo loc chong vung chet ma sat (Friction Deadband) cho dong co JGB37-520 xe nang:
+     * Hop so kim loai 37mm va xe nang ~1kg can PWM toi thieu 20% de thang ma sat tinh.
+     * Neu duoc lenh quay (|speed| > 0) nhung duoi 20%, nang len 20% de tranh kẹt motor sinh nhiệt */
+    #define JGB37_MIN_DRIVE_PWM  20
+    if (left > 0 && left < JGB37_MIN_DRIVE_PWM) left = JGB37_MIN_DRIVE_PWM;
+    else if (left < 0 && left > -JGB37_MIN_DRIVE_PWM) left = -JGB37_MIN_DRIVE_PWM;
+
+    if (right > 0 && right < JGB37_MIN_DRIVE_PWM) right = JGB37_MIN_DRIVE_PWM;
+    else if (right < 0 && right > -JGB37_MIN_DRIVE_PWM) right = -JGB37_MIN_DRIVE_PWM;
+
     /* Gioi han toc do banh trai */
     if (left > pid->max_speed) left = pid->max_speed;
     if (left < pid->min_speed) left = pid->min_speed;

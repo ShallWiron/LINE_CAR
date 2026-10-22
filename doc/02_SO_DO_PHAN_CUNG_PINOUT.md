@@ -31,13 +31,17 @@
 
 ## 2. Phân tích chi tiết từng khối phần cứng
 
-### 2.1. Khối Driver động cơ TB6612FNG
+### 2.1. Khối Driver động cơ TB6612FNG & Động cơ tải nặng JGB37-520
 TB6612FNG là mạch cầu H kép sử dụng MOSFET nội trở thấp (ít sinh nhiệt và sụt áp thấp hơn rất nhiều so với L298N cổ điển).
 * **Chân nguồn:**
-  * `VM`: Nối trực tiếp nguồn Pin (7.4V - 11.1V). Cần lắp thêm tụ hóa $100\mu\text{F} - 470\mu\text{F}$ sát chân VM để dập gai áp phản hồi từ cuộn dây động cơ.
+  * `VM`: Nối trực tiếp nguồn Pin (7.4V - 11.1V). **Bắt buộc lắp thêm tụ hóa $470\mu\text{F} - 1000\mu\text{F}$ / 16V hoặc 25V** sát chân VM để dập gai áp phản hồi lớn từ cuộn dây động cơ JGB37-520.
   * `VCC`: Nối nguồn logic $5\text{V}$ (hoặc $3.3\text{V}$).
   * `GND`: Nối chung Mass với STM32 và nguồn Pin.
   * `STBY`: Nối cố định lên $VCC$ ($3.3\text{V}$ hoặc $5\text{V}$) để kích hoạt driver hoạt động.
+* **LƯU Ý ĐẶC BIỆT KHI DÙNG VỚI ĐỘNG CƠ JGB37-520:**
+  * Động cơ JGB37-520 có dòng kẹt (stall current) lên tới $1.5\text{A} - 2.5\text{A}$, vượt mức dòng liên tục $1.2\text{A}$ của TB6612.
+  * **Bắt buộc dán tản nhiệt nhôm nhỏ** lên lưng chip TB6612FNG để tránh bị ngắt nhiệt (Thermal Shutdown) khi vào cua $90^\circ$ hoặc đảo chiều gấp.
+  * Xem phân tích chi tiết tại file tài liệu: `07_PHAN_TICH_DONG_CO_JGB37_VA_CAC_TRUONG_HOP_VAN_DE.md`.
 * **Bảng chân lý điều khiển hướng động cơ:**
   | IN1 | IN2 | PWM | Trạng thái động cơ |
   | :---: | :---: | :---: | :--- |

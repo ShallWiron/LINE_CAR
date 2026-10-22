@@ -56,7 +56,7 @@ I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\
 I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_tim.h)(0x61AD876E)
 I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_usart.h)(0x61AD876E)
 I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\misc.h)(0x61AD876E)
-F (..\USER\qtr8a.c)(0x6AD8B46E)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../USER-I./RTE/Device/STM32F103C8-I./RTE/_Target_1-I"C:/Users/Shall Wiron/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include"-I"C:/Users/Shall Wiron/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include"-I"C:/Users/Shall Wiron/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc"-D__UVISION_VERSION="543" -DSTM32F10X_MD -D_RTE_-o ./qtr8a.o -MMD)
+F (..\USER\qtr8a.c)(0x6AD9BF7B)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../USER-I./RTE/Device/STM32F103C8-I./RTE/_Target_1-I"C:/Users/Shall Wiron/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include"-I"C:/Users/Shall Wiron/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include"-I"C:/Users/Shall Wiron/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc"-D__UVISION_VERSION="543" -DSTM32F10X_MD -D_RTE_-o ./qtr8a.o -MMD)
 I (..\USER\qtr8a.h)(0x6AD8B459)
 I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h)(0x61AD876E)
 I (RTE\_Target_1\RTE_Components.h)(0x6AD8A983)
@@ -115,9 +115,9 @@ I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\
 I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_usart.h)(0x61AD876E)
 I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\misc.h)(0x61AD876E)
 I (..\USER\delay.h)(0x6AD61556)
-F (..\USER\pid.c)(0x6AD8B450)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../USER-I./RTE/Device/STM32F103C8-I./RTE/_Target_1-I"C:/Users/Shall Wiron/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include"-I"C:/Users/Shall Wiron/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include"-I"C:/Users/Shall Wiron/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc"-D__UVISION_VERSION="543" -DSTM32F10X_MD -D_RTE_-o ./pid.o -MMD)
+F (..\USER\pid.c)(0x6AD9B2A3)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../USER-I./RTE/Device/STM32F103C8-I./RTE/_Target_1-I"C:/Users/Shall Wiron/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include"-I"C:/Users/Shall Wiron/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include"-I"C:/Users/Shall Wiron/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc"-D__UVISION_VERSION="543" -DSTM32F10X_MD -D_RTE_-o ./pid.o -MMD)
 I (..\USER\pid.h)(0x6AD8B436)
-F (..\USER\car_app.c)(0x6AD8B4B4)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../USER-I./RTE/Device/STM32F103C8-I./RTE/_Target_1-I"C:/Users/Shall Wiron/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include"-I"C:/Users/Shall Wiron/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include"-I"C:/Users/Shall Wiron/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc"-D__UVISION_VERSION="543" -DSTM32F10X_MD -D_RTE_-o ./car_app.o -MMD)
+F (..\USER\car_app.c)(0x6AD9C3DD)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../USER-I./RTE/Device/STM32F103C8-I./RTE/_Target_1-I"C:/Users/Shall Wiron/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include"-I"C:/Users/Shall Wiron/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include"-I"C:/Users/Shall Wiron/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc"-D__UVISION_VERSION="543" -DSTM32F10X_MD -D_RTE_-o ./car_app.o -MMD)
 I (..\USER\car_app.h)(0x6AD61556)
 I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h)(0x61AD876E)
 I (RTE\_Target_1\RTE_Components.h)(0x6AD8A983)
@@ -165,77 +165,6 @@ I (RTE\_Target_1\RTE_Components.h)(0x6AD8A983)
 I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm3.h)(0x69DDA721)
 I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\system_stm32f10x.h)(0x61AD876E)
 I (RTE\Device\STM32F103C8\stm32f10x_conf.h)(0x69C69836)
-I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_dma.h)(0x61AD876E)
-I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_exti.h)(0x61AD876E)
-I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_flash.h)(0x61AD876E)
-I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_gpio.h)(0x61AD876E)
-I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_i2c.h)(0x61AD876E)
-I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x61AD876E)
-I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_spi.h)(0x61AD876E)
-I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_tim.h)(0x61AD876E)
-I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_usart.h)(0x61AD876E)
-I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\misc.h)(0x61AD876E)
-F (C:/Users/Shall Wiron/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/src/stm32f10x_gpio.c)(0x61AD876E)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../USER-I./RTE/Device/STM32F103C8-I./RTE/_Target_1-I"C:/Users/Shall Wiron/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include"-I"C:/Users/Shall Wiron/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include"-I"C:/Users/Shall Wiron/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc"-D__UVISION_VERSION="543" -DSTM32F10X_MD -D_RTE_-o ./stm32f10x_gpio.o -MMD)
-I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_gpio.h)(0x61AD876E)
-I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h)(0x61AD876E)
-I (RTE\_Target_1\RTE_Components.h)(0x6AD8A983)
-I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm3.h)(0x69DDA721)
-I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\system_stm32f10x.h)(0x61AD876E)
-I (RTE\Device\STM32F103C8\stm32f10x_conf.h)(0x69C69836)
-I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_adc.h)(0x61AD876E)
-I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_dma.h)(0x61AD876E)
-I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_exti.h)(0x61AD876E)
-I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_flash.h)(0x61AD876E)
-I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_i2c.h)(0x61AD876E)
-I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x61AD876E)
-I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_spi.h)(0x61AD876E)
-I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_tim.h)(0x61AD876E)
-I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_usart.h)(0x61AD876E)
-I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\misc.h)(0x61AD876E)
-F (C:/Users/Shall Wiron/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/src/stm32f10x_rcc.c)(0x61AD876E)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../USER-I./RTE/Device/STM32F103C8-I./RTE/_Target_1-I"C:/Users/Shall Wiron/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include"-I"C:/Users/Shall Wiron/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include"-I"C:/Users/Shall Wiron/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc"-D__UVISION_VERSION="543" -DSTM32F10X_MD -D_RTE_-o ./stm32f10x_rcc.o -MMD)
-I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x61AD876E)
-I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h)(0x61AD876E)
-I (RTE\_Target_1\RTE_Components.h)(0x6AD8A983)
-I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm3.h)(0x69DDA721)
-I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\system_stm32f10x.h)(0x61AD876E)
-I (RTE\Device\STM32F103C8\stm32f10x_conf.h)(0x69C69836)
-I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_adc.h)(0x61AD876E)
-I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_dma.h)(0x61AD876E)
-I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_exti.h)(0x61AD876E)
-I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_flash.h)(0x61AD876E)
-I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_gpio.h)(0x61AD876E)
-I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_i2c.h)(0x61AD876E)
-I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_spi.h)(0x61AD876E)
-I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_tim.h)(0x61AD876E)
-I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_usart.h)(0x61AD876E)
-I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\misc.h)(0x61AD876E)
-F (C:/Users/Shall Wiron/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/src/stm32f10x_tim.c)(0x61AD876E)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../USER-I./RTE/Device/STM32F103C8-I./RTE/_Target_1-I"C:/Users/Shall Wiron/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include"-I"C:/Users/Shall Wiron/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include"-I"C:/Users/Shall Wiron/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc"-D__UVISION_VERSION="543" -DSTM32F10X_MD -D_RTE_-o ./stm32f10x_tim.o -MMD)
-I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_tim.h)(0x61AD876E)
-I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h)(0x61AD876E)
-I (RTE\_Target_1\RTE_Components.h)(0x6AD8A983)
-I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm3.h)(0x69DDA721)
-I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\system_stm32f10x.h)(0x61AD876E)
-I (RTE\Device\STM32F103C8\stm32f10x_conf.h)(0x69C69836)
-I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_adc.h)(0x61AD876E)
-I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_dma.h)(0x61AD876E)
-I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_exti.h)(0x61AD876E)
-I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_flash.h)(0x61AD876E)
-I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_gpio.h)(0x61AD876E)
-I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_i2c.h)(0x61AD876E)
-I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x61AD876E)
-I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_spi.h)(0x61AD876E)
-I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_usart.h)(0x61AD876E)
-I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\misc.h)(0x61AD876E)
-F (RTE/Device/STM32F103C8/RTE_Device.h)(0x69C69836)()
-F (RTE/Device/STM32F103C8/startup_stm32f10x_md.s)(0x69C69836)(--target=arm-arm-none-eabi -mcpu=cortex-m3 -masm=auto  -Wa,armasm,--diag_suppress=A1950W -c-gdwarf-4-I./RTE/Device/STM32F103C8-I./RTE/_Target_1-I"C:/Users/Shall Wiron/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include"-I"C:/Users/Shall Wiron/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include"-I"C:/Users/Shall Wiron/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc"-Wa,armasm,--pd,"__UVISION_VERSION SETA 543" -Wa,armasm,--pd,"STM32F10X_MD SETA 1" -Wa,armasm,--pd,"_RTE_ SETA 1"-o ./startup_stm32f10x_md.o)
-F (RTE/Device/STM32F103C8/stm32f10x_conf.h)(0x69C69836)()
-F (RTE/Device/STM32F103C8/system_stm32f10x.c)(0x69C69836)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../USER-I./RTE/Device/STM32F103C8-I./RTE/_Target_1-I"C:/Users/Shall Wiron/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include"-I"C:/Users/Shall Wiron/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include"-I"C:/Users/Shall Wiron/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc"-D__UVISION_VERSION="543" -DSTM32F10X_MD -D_RTE_-o ./system_stm32f10x.o -MMD)
-I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h)(0x61AD876E)
-I (RTE\_Target_1\RTE_Components.h)(0x6AD8A983)
-I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm3.h)(0x69DDA721)
-I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\system_stm32f10x.h)(0x61AD876E)
-I (RTE\Device\STM32F103C8\stm32f10x_conf.h)(0x69C69836)
-I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_adc.h)(0x61AD876E)
 I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_dma.h)(0x61AD876E)
 I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_exti.h)(0x61AD876E)
 I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_flash.h)(0x61AD876E)
@@ -297,6 +226,23 @@ I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\
 I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_tim.h)(0x61AD876E)
 I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_usart.h)(0x61AD876E)
 I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\misc.h)(0x61AD876E)
+F (C:/Users/Shall Wiron/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/src/stm32f10x_gpio.c)(0x61AD876E)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../USER-I./RTE/Device/STM32F103C8-I./RTE/_Target_1-I"C:/Users/Shall Wiron/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include"-I"C:/Users/Shall Wiron/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include"-I"C:/Users/Shall Wiron/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc"-D__UVISION_VERSION="543" -DSTM32F10X_MD -D_RTE_-o ./stm32f10x_gpio.o -MMD)
+I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_gpio.h)(0x61AD876E)
+I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h)(0x61AD876E)
+I (RTE\_Target_1\RTE_Components.h)(0x6AD8A983)
+I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm3.h)(0x69DDA721)
+I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\system_stm32f10x.h)(0x61AD876E)
+I (RTE\Device\STM32F103C8\stm32f10x_conf.h)(0x69C69836)
+I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_adc.h)(0x61AD876E)
+I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_dma.h)(0x61AD876E)
+I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_exti.h)(0x61AD876E)
+I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_flash.h)(0x61AD876E)
+I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_i2c.h)(0x61AD876E)
+I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x61AD876E)
+I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_spi.h)(0x61AD876E)
+I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_tim.h)(0x61AD876E)
+I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_usart.h)(0x61AD876E)
+I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\misc.h)(0x61AD876E)
 F (C:/Users/Shall Wiron/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/src/stm32f10x_i2c.c)(0x61AD876E)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../USER-I./RTE/Device/STM32F103C8-I./RTE/_Target_1-I"C:/Users/Shall Wiron/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include"-I"C:/Users/Shall Wiron/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include"-I"C:/Users/Shall Wiron/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc"-D__UVISION_VERSION="543" -DSTM32F10X_MD -D_RTE_-o ./stm32f10x_i2c.o -MMD)
 I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_i2c.h)(0x61AD876E)
 I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h)(0x61AD876E)
@@ -310,6 +256,23 @@ I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\
 I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_flash.h)(0x61AD876E)
 I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_gpio.h)(0x61AD876E)
 I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x61AD876E)
+I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_spi.h)(0x61AD876E)
+I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_tim.h)(0x61AD876E)
+I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_usart.h)(0x61AD876E)
+I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\misc.h)(0x61AD876E)
+F (C:/Users/Shall Wiron/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/src/stm32f10x_rcc.c)(0x61AD876E)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../USER-I./RTE/Device/STM32F103C8-I./RTE/_Target_1-I"C:/Users/Shall Wiron/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include"-I"C:/Users/Shall Wiron/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include"-I"C:/Users/Shall Wiron/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc"-D__UVISION_VERSION="543" -DSTM32F10X_MD -D_RTE_-o ./stm32f10x_rcc.o -MMD)
+I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x61AD876E)
+I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h)(0x61AD876E)
+I (RTE\_Target_1\RTE_Components.h)(0x6AD8A983)
+I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm3.h)(0x69DDA721)
+I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\system_stm32f10x.h)(0x61AD876E)
+I (RTE\Device\STM32F103C8\stm32f10x_conf.h)(0x69C69836)
+I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_adc.h)(0x61AD876E)
+I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_dma.h)(0x61AD876E)
+I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_exti.h)(0x61AD876E)
+I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_flash.h)(0x61AD876E)
+I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_gpio.h)(0x61AD876E)
+I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_i2c.h)(0x61AD876E)
 I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_spi.h)(0x61AD876E)
 I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_tim.h)(0x61AD876E)
 I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_usart.h)(0x61AD876E)
@@ -331,6 +294,23 @@ I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\
 I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_tim.h)(0x61AD876E)
 I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_usart.h)(0x61AD876E)
 I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\misc.h)(0x61AD876E)
+F (C:/Users/Shall Wiron/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/src/stm32f10x_tim.c)(0x61AD876E)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../USER-I./RTE/Device/STM32F103C8-I./RTE/_Target_1-I"C:/Users/Shall Wiron/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include"-I"C:/Users/Shall Wiron/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include"-I"C:/Users/Shall Wiron/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc"-D__UVISION_VERSION="543" -DSTM32F10X_MD -D_RTE_-o ./stm32f10x_tim.o -MMD)
+I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_tim.h)(0x61AD876E)
+I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h)(0x61AD876E)
+I (RTE\_Target_1\RTE_Components.h)(0x6AD8A983)
+I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm3.h)(0x69DDA721)
+I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\system_stm32f10x.h)(0x61AD876E)
+I (RTE\Device\STM32F103C8\stm32f10x_conf.h)(0x69C69836)
+I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_adc.h)(0x61AD876E)
+I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_dma.h)(0x61AD876E)
+I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_exti.h)(0x61AD876E)
+I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_flash.h)(0x61AD876E)
+I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_gpio.h)(0x61AD876E)
+I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_i2c.h)(0x61AD876E)
+I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x61AD876E)
+I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_spi.h)(0x61AD876E)
+I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_usart.h)(0x61AD876E)
+I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\misc.h)(0x61AD876E)
 F (C:/Users/Shall Wiron/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/src/stm32f10x_usart.c)(0x61AD876E)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../USER-I./RTE/Device/STM32F103C8-I./RTE/_Target_1-I"C:/Users/Shall Wiron/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include"-I"C:/Users/Shall Wiron/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include"-I"C:/Users/Shall Wiron/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc"-D__UVISION_VERSION="543" -DSTM32F10X_MD -D_RTE_-o ./stm32f10x_usart.o -MMD)
 I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_usart.h)(0x61AD876E)
 I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h)(0x61AD876E)
@@ -347,4 +327,24 @@ I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\
 I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x61AD876E)
 I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_spi.h)(0x61AD876E)
 I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_tim.h)(0x61AD876E)
+I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\misc.h)(0x61AD876E)
+F (RTE/Device/STM32F103C8/RTE_Device.h)(0x69C69836)()
+F (RTE/Device/STM32F103C8/startup_stm32f10x_md.s)(0x69C69836)(--target=arm-arm-none-eabi -mcpu=cortex-m3 -masm=auto  -Wa,armasm,--diag_suppress=A1950W -c-gdwarf-4-I./RTE/Device/STM32F103C8-I./RTE/_Target_1-I"C:/Users/Shall Wiron/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include"-I"C:/Users/Shall Wiron/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include"-I"C:/Users/Shall Wiron/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc"-Wa,armasm,--pd,"__UVISION_VERSION SETA 543" -Wa,armasm,--pd,"STM32F10X_MD SETA 1" -Wa,armasm,--pd,"_RTE_ SETA 1"-o ./startup_stm32f10x_md.o)
+F (RTE/Device/STM32F103C8/stm32f10x_conf.h)(0x69C69836)()
+F (RTE/Device/STM32F103C8/system_stm32f10x.c)(0x69C69836)(-xc -std=c99 --target=arm-arm-none-eabi -mcpu=cortex-m3 -c-fno-rtti -funsigned-char -fshort-enums -fshort-wchar-gdwarf-4 -O0 -ffunction-sections -Wall -Wextra -Wno-packed -Wno-reserved-id-macro -Wno-unused-macros -Wno-documentation-unknown-command -Wno-documentation -Wno-license-management -Wno-parentheses-equality -Wno-reserved-identifier -I ../USER-I./RTE/Device/STM32F103C8-I./RTE/_Target_1-I"C:/Users/Shall Wiron/AppData/Local/Arm/Packs/ARM/CMSIS/6.2.0/CMSIS/Core/Include"-I"C:/Users/Shall Wiron/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/Include"-I"C:/Users/Shall Wiron/AppData/Local/Arm/Packs/Keil/STM32F1xx_DFP/2.4.1/Device/StdPeriph_Driver/inc"-D__UVISION_VERSION="543" -DSTM32F10X_MD -D_RTE_-o ./system_stm32f10x.o -MMD)
+I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\stm32f10x.h)(0x61AD876E)
+I (RTE\_Target_1\RTE_Components.h)(0x6AD8A983)
+I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\ARM\CMSIS\6.2.0\CMSIS\Core\Include\core_cm3.h)(0x69DDA721)
+I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\Include\system_stm32f10x.h)(0x61AD876E)
+I (RTE\Device\STM32F103C8\stm32f10x_conf.h)(0x69C69836)
+I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_adc.h)(0x61AD876E)
+I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_dma.h)(0x61AD876E)
+I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_exti.h)(0x61AD876E)
+I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_flash.h)(0x61AD876E)
+I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_gpio.h)(0x61AD876E)
+I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_i2c.h)(0x61AD876E)
+I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_rcc.h)(0x61AD876E)
+I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_spi.h)(0x61AD876E)
+I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_tim.h)(0x61AD876E)
+I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\stm32f10x_usart.h)(0x61AD876E)
 I (C:\Users\Shall Wiron\AppData\Local\Arm\Packs\Keil\STM32F1xx_DFP\2.4.1\Device\StdPeriph_Driver\inc\misc.h)(0x61AD876E)

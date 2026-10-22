@@ -215,18 +215,14 @@ int16_t QTR8A_ReadLine(uint16_t *sensor_values, uint8_t line_mode)
     /* Neu tat ca 8 mat quang tro deu khong thay line (bi mat line) */
     if (!on_line || sum == 0)
     {
-        /* Tra ve vi tri gan nhat de xe tim lai line ma khong bi dot ngot lac huong */
-        if (s_last_position < 2500)
+        /* Tra ve vi tri cuc tri de xe quay lai tim line */
+        if (s_last_position < 3500)
         {
-            return 0;      /* Lech han sang ben trai -> be lai toi da trai */
-        }
-        else if (s_last_position > 4500)
-        {
-            return 7000;   /* Lech han sang ben phai -> be lai toi da phai */
+            return 0;      /* Da tung o nua trai -> be lai toi da trai */
         }
         else
         {
-            return 3500;   /* Vua mat o vung trung tam -> giu thang de lao qua khe dut line */
+            return 7000;   /* Da tung o nua phai -> be lai toi da phai */
         }
     }
 
@@ -301,26 +297,26 @@ CornerType_t QTR8A_DetectCorner(const uint16_t *sensor_values)
     uint32_t sum_right = (uint32_t)sensor_values[4] + sensor_values[5] + 
                          (uint32_t)sensor_values[6] + sensor_values[7];
 
-    /* 2. Nhan dien goc vuong ben Trai (90 deg Left):
-     * - Mat ngoai cung trai (0, 1) nhin thay vach dam (> 450)
-     * - Mat ngoai cung phai (6, 7) hoan toan ngoai vach (< 250)
-     * - Bat doi xung trai/phai cuc lon (sum_left > 1400 va sum_right < 600)
+    /* 2. Nhan dien goc vuong ben Trai (Phia mat 0, 1):
+     * - Mat ngoai cung trai (0 hoac 1) bat duoc vach (> 300)
+     * - Mat ngoai cung phai (7) khong phai vach dam (< 450)
+     * - Do bat doi xung trai/phai vuot troi (sum_left > 800 va gap doi sum_right)
      */
-    if (sensor_values[0] > 450 && sensor_values[1] > 350 &&
-        sensor_values[6] < 250 && sensor_values[7] < 250 &&
-        sum_left > 1400 && sum_right < 600)
+    if ((sensor_values[0] > 300 || sensor_values[1] > 360) &&
+        sensor_values[7] < 450 &&
+        sum_left > 800 && sum_left > (sum_right * 2U))
     {
         return CORNER_LEFT_90;
     }
 
-    /* 3. Nhan dien goc vuong ben Phai (90 deg Right):
-     * - Mat ngoai cung phai (6, 7) nhin thay vach dam (> 450)
-     * - Mat ngoai cung trai (0, 1) hoan toan ngoai vach (< 250)
-     * - Bat doi xung phai/trai cuc lon (sum_right > 1400 va sum_left < 600)
+    /* 3. Nhan dien goc vuong ben Phai (Phia mat 6, 7):
+     * - Mat ngoai cung phai (7 hoac 6) bat duoc vach (> 300)
+     * - Mat ngoai cung trai (0) khong phai vach dam (< 450)
+     * - Do bat doi xung phai/trai vuot troi (sum_right > 800 va gap doi sum_left)
      */
-    if (sensor_values[7] > 450 && sensor_values[6] > 350 &&
-        sensor_values[0] < 250 && sensor_values[1] < 250 &&
-        sum_right > 1400 && sum_left < 600)
+    if ((sensor_values[7] > 300 || sensor_values[6] > 360) &&
+        sensor_values[0] < 450 &&
+        sum_right > 800 && sum_right > (sum_left * 2U))
     {
         return CORNER_RIGHT_90;
     }

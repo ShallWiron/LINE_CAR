@@ -13,7 +13,7 @@ Dự án **LINE_CAR** là hệ thống xe dò line tự hành sử dụng vi đi
 | **Bộ nhớ nội** | 64 KB Flash, 20 KB SRAM |
 | **Cảm biến dò đường** | Pololu QTR-8A (8 mắt thu phát hồng ngoại Analog, phân giải 12-bit qua ADC1) |
 | **Driver động cơ** | TB6612FNG (Dòng liên tục 1.2A/kênh, đỉnh 3.2A, hiệu suất cao hơn L298N) |
-| **Động cơ chấp hành** | 2 Động cơ DC giảm tốc (Bánh Trái: Motor A, Bánh Phải: Motor B) |
+| **Động cơ chấp hành** | 2 Động cơ DC giảm tốc kim loại **JGB37-520** (12V/6V, hộp số thép 37mm, cốt 6mm D-shaft, tải nặng) |
 | **Màn hình hiển thị** | OLED 0.96 inch SSD1306, độ phân giải 128x64 pixels, chuẩn giao tiếp I2C |
 | **Nút bấm điều khiển** | 4 nút nhấn dạng tactile switch kéo chân xuống GND qua trở kéo nội IPU |
 | **Nguồn cấp** | Pin LiPo 2S (7.4V - 8.4V) hoặc 3S (11.1V), hạ áp 5V (cấp OLED/Driver) và 3.3V (cấp MCU) |
@@ -31,7 +31,8 @@ LINE_CAR/
 │   ├── 03_KIEN_TRUC_PHAN_MEM_FSM.md     # Thiết kế phần mềm, FSM & API
 │   ├── 04_THUAT_TOAN_PID_VA_CAM_BIEN.md # Toán học PID & giải thuật cảm biến
 │   ├── 05_HUONG_DAN_VAN_HANH_MENU.md    # Hướng dẫn thao tác nút bấm & menu OLED
-│   └── 06_DE_XUAT_NANG_CAP_TOI_UU.md    # Kế hoạch tối ưu & nâng cấp tương lai
+│   ├── 06_DE_XUAT_NANG_CAP_TOI_UU.md    # Kế hoạch tối ưu & nâng cấp tương lai
+│   └── 07_PHAN_TICH_DONG_CO_JGB37_VA_CAC_TRUONG_HOP_VAN_DE.md # Chuyên sâu động cơ JGB37-520
 │
 └── LINE_CAR/
     ├── MDK/                             # Thư mục dự án Keil uVision 5

@@ -3,9 +3,9 @@
 <title>Static Call Graph - [.\car_line.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\car_line.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6240002: Last Updated: Wed Oct 21 19:52:29 2026
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 6240002: Last Updated: Thu Oct 22 15:06:08 2026
 <BR><P>
-<H3>Maximum Stack Usage =        424 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =        488 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
 __rt_entry_main &rArr; main &rArr; Car_Loop &rArr; UI_DrawMenu &rArr; snprintf &rArr; _printf_char_common &rArr; __printf
 <P>
@@ -375,7 +375,7 @@ Global Symbols
 <P><STRONG><a name="[13d]"></a>__rt_entry_postsh_1</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$00000009))
 
 <P><STRONG><a name="[6a]"></a>__rt_entry_main</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, __rtentry2.o(.ARM.Collect$$rtentry$$0000000D))
-<BR><BR>[Stack]<UL><LI>Max Depth = 424 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 488 + Unknown Stack Size
 <LI>Call Chain = __rt_entry_main &rArr; main &rArr; Car_Loop &rArr; UI_DrawMenu &rArr; snprintf &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
@@ -899,8 +899,8 @@ Global Symbols
 <BR><BR>[Stack]<UL><LI>Max Depth = 8 + Unknown Stack Size
 <LI>Call Chain = __user_setup_stackheap
 </UL>
-<BR>[Calls]<UL><LI><a href="#[3a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_initial_stackheap
-<LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_perproc_libspace
+<BR>[Calls]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_perproc_libspace
+<LI><a href="#[3a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__user_initial_stackheap
 </UL>
 <BR>[Called By]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__rt_entry_sh
 </UL>
@@ -1077,8 +1077,8 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[6b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[a7]"></a>Car_Loop</STRONG> (Thumb, 1876 bytes, Stack size 72 bytes, car_app.o(.text.Car_Loop))
-<BR><BR>[Stack]<UL><LI>Max Depth = 408 + Unknown Stack Size
+<P><STRONG><a name="[a7]"></a>Car_Loop</STRONG> (Thumb, 2394 bytes, Stack size 88 bytes, car_app.o(.text.Car_Loop))
+<BR><BR>[Stack]<UL><LI>Max Depth = 472 + Unknown Stack Size
 <LI>Call Chain = Car_Loop &rArr; UI_DrawMenu &rArr; snprintf &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UI_DrawMenu
@@ -1099,9 +1099,9 @@ Global Symbols
 <LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;QTR8A_ReadLine
 <LI><a href="#[a6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ms
 <LI><a href="#[99]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;millis
-<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Motor_Brake
+<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Motor_Brake
 <LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Motor_Stop
-<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Motor_SetSpeed
+<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Motor_SetSpeed
 <LI><a href="#[b6]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fcmpge
 <LI><a href="#[b4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_fadd
 </UL>
@@ -1218,7 +1218,7 @@ Global Symbols
 <LI><a href="#[cc]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Stop
 <LI><a href="#[cd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_WriteByte
 <LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Start
-<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Motor_Brake
+<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Motor_Brake
 <LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Motor_B_SetSpeed
 <LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Motor_A_SetSpeed
 </UL>
@@ -1232,7 +1232,7 @@ Global Symbols
 <LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LimitSpeed
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Motor_Stop
-<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Motor_SetSpeed
+<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Motor_SetSpeed
 </UL>
 
 <P><STRONG><a name="[d1]"></a>Motor_B_SetSpeed</STRONG> (Thumb, 200 bytes, Stack size 24 bytes, tb6612.o(.text.Motor_B_SetSpeed))
@@ -1244,10 +1244,10 @@ Global Symbols
 <LI><a href="#[cf]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LimitSpeed
 </UL>
 <BR>[Called By]<UL><LI><a href="#[9e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Motor_Stop
-<LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Motor_SetSpeed
+<LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Motor_SetSpeed
 </UL>
 
-<P><STRONG><a name="[ae]"></a>Motor_Brake</STRONG> (Thumb, 50 bytes, Stack size 16 bytes, tb6612.o(.text.Motor_Brake))
+<P><STRONG><a name="[af]"></a>Motor_Brake</STRONG> (Thumb, 50 bytes, Stack size 16 bytes, tb6612.o(.text.Motor_Brake))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = Motor_Brake &rArr; TIM_SetCompare1
 </UL>
 <BR>[Calls]<UL><LI><a href="#[d2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_SetCompare1
@@ -1277,7 +1277,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Car_Init
 </UL>
 
-<P><STRONG><a name="[af]"></a>Motor_SetSpeed</STRONG> (Thumb, 32 bytes, Stack size 16 bytes, tb6612.o(.text.Motor_SetSpeed))
+<P><STRONG><a name="[ae]"></a>Motor_SetSpeed</STRONG> (Thumb, 32 bytes, Stack size 16 bytes, tb6612.o(.text.Motor_SetSpeed))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = Motor_SetSpeed &rArr; Motor_B_SetSpeed &rArr; TIM_SetCompare1
 </UL>
 <BR>[Calls]<UL><LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Motor_B_SetSpeed
@@ -1335,7 +1335,8 @@ Global Symbols
 </UL>
 <BR>[Calls]<UL><LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OLED_DrawLine
 </UL>
-<BR>[Called By]<UL><LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OLED_DrawSensorBars
+<BR>[Called By]<UL><LI><a href="#[b2]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;UI_DrawRunning
+<LI><a href="#[c5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OLED_DrawSensorBars
 </UL>
 
 <P><STRONG><a name="[c5]"></a>OLED_DrawSensorBars</STRONG> (Thumb, 348 bytes, Stack size 40 bytes, oled.o(.text.OLED_DrawSensorBars))
@@ -1411,7 +1412,7 @@ Global Symbols
 <LI><a href="#[9b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Car_Init
 </UL>
 
-<P><STRONG><a name="[b1]"></a>PID_CalculateMotorSpeeds</STRONG> (Thumb, 288 bytes, Stack size 32 bytes, pid.o(.text.PID_CalculateMotorSpeeds))
+<P><STRONG><a name="[b1]"></a>PID_CalculateMotorSpeeds</STRONG> (Thumb, 416 bytes, Stack size 32 bytes, pid.o(.text.PID_CalculateMotorSpeeds))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = PID_CalculateMotorSpeeds
 </UL>
 <BR>[Called By]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Car_Loop
@@ -1453,7 +1454,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Do_Calibration
 </UL>
 
-<P><STRONG><a name="[ad]"></a>QTR8A_DetectCorner</STRONG> (Thumb, 220 bytes, Stack size 24 bytes, qtr8a.o(.text.QTR8A_DetectCorner))
+<P><STRONG><a name="[ad]"></a>QTR8A_DetectCorner</STRONG> (Thumb, 208 bytes, Stack size 24 bytes, qtr8a.o(.text.QTR8A_DetectCorner))
 <BR><BR>[Stack]<UL><LI>Max Depth = 32<LI>Call Chain = QTR8A_DetectCorner &rArr; QTR8A_IsCrossLine
 </UL>
 <BR>[Calls]<UL><LI><a href="#[ea]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;QTR8A_IsCrossLine
@@ -1516,7 +1517,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[a8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;QTR8A_ReadLine
 </UL>
 
-<P><STRONG><a name="[a8]"></a>QTR8A_ReadLine</STRONG> (Thumb, 302 bytes, Stack size 48 bytes, qtr8a.o(.text.QTR8A_ReadLine))
+<P><STRONG><a name="[a8]"></a>QTR8A_ReadLine</STRONG> (Thumb, 270 bytes, Stack size 48 bytes, qtr8a.o(.text.QTR8A_ReadLine))
 <BR><BR>[Stack]<UL><LI>Max Depth = 100<LI>Call Chain = QTR8A_ReadLine &rArr; QTR8A_ReadCalibrated &rArr; QTR8A_ReadRaw
 </UL>
 <BR>[Calls]<UL><LI><a href="#[f9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;QTR8A_ReadCalibrated
@@ -1638,14 +1639,14 @@ Global Symbols
 <P><STRONG><a name="[d2]"></a>TIM_SetCompare1</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, stm32f10x_tim.o(.text.TIM_SetCompare1))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = TIM_SetCompare1
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Motor_Brake
+<BR>[Called By]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Motor_Brake
 <LI><a href="#[d1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Motor_B_SetSpeed
 </UL>
 
 <P><STRONG><a name="[d0]"></a>TIM_SetCompare2</STRONG> (Thumb, 20 bytes, Stack size 8 bytes, stm32f10x_tim.o(.text.TIM_SetCompare2))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = TIM_SetCompare2
 </UL>
-<BR>[Called By]<UL><LI><a href="#[ae]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Motor_Brake
+<BR>[Called By]<UL><LI><a href="#[af]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Motor_Brake
 <LI><a href="#[ce]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Motor_A_SetSpeed
 </UL>
 
@@ -1671,7 +1672,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[6b]"></a>main</STRONG> (Thumb, 20 bytes, Stack size 16 bytes, main.o(.text.main))
-<BR><BR>[Stack]<UL><LI>Max Depth = 424 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 488 + Unknown Stack Size
 <LI>Call Chain = main &rArr; Car_Loop &rArr; UI_DrawMenu &rArr; snprintf &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Car_Loop
@@ -2028,7 +2029,7 @@ Local Symbols
 <LI><a href="#[c8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;I2C_Start
 </UL>
 
-<P><STRONG><a name="[a2]"></a>Config_LoadFromFlash</STRONG> (Thumb, 228 bytes, Stack size 96 bytes, car_app.o(.text.Config_LoadFromFlash))
+<P><STRONG><a name="[a2]"></a>Config_LoadFromFlash</STRONG> (Thumb, 310 bytes, Stack size 96 bytes, car_app.o(.text.Config_LoadFromFlash))
 <BR><BR>[Stack]<UL><LI>Max Depth = 112<LI>Call Chain = Config_LoadFromFlash &rArr; Config_ComputeChecksum
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b8]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Config_ComputeChecksum
@@ -2058,13 +2059,14 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Car_Loop
 </UL>
 
-<P><STRONG><a name="[b2]"></a>UI_DrawRunning</STRONG> (Thumb, 448 bytes, Stack size 64 bytes, car_app.o(.text.UI_DrawRunning))
-<BR><BR>[Stack]<UL><LI>Max Depth = 200 + Unknown Stack Size
+<P><STRONG><a name="[b2]"></a>UI_DrawRunning</STRONG> (Thumb, 1186 bytes, Stack size 104 bytes, car_app.o(.text.UI_DrawRunning))
+<BR><BR>[Stack]<UL><LI>Max Depth = 240 + Unknown Stack Size
 <LI>Call Chain = UI_DrawRunning &rArr; snprintf &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OLED_ShowString
 <LI><a href="#[e3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OLED_ShowChar
 <LI><a href="#[e1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OLED_FillRect
+<LI><a href="#[e0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OLED_DrawRect
 <LI><a href="#[de]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OLED_DrawLine
 <LI><a href="#[a5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OLED_Update
 <LI><a href="#[a3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OLED_Clear
@@ -2074,7 +2076,7 @@ Local Symbols
 </UL>
 
 <P><STRONG><a name="[b3]"></a>Do_Calibration</STRONG> (Thumb, 436 bytes, Stack size 80 bytes, car_app.o(.text.Do_Calibration))
-<BR><BR>[Stack]<UL><LI>Max Depth = 236 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 228 + Unknown Stack Size
 <LI>Call Chain = Do_Calibration &rArr; Config_SaveToFlash &rArr; FLASH_ProgramWord &rArr; FLASH_WaitForLastOperation &rArr; FLASH_GetBank1Status
 </UL>
 <BR>[Calls]<UL><LI><a href="#[b5]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Config_SaveToFlash
@@ -2095,8 +2097,8 @@ Local Symbols
 <BR>[Called By]<UL><LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Car_Loop
 </UL>
 
-<P><STRONG><a name="[b5]"></a>Config_SaveToFlash</STRONG> (Thumb, 314 bytes, Stack size 104 bytes, car_app.o(.text.Config_SaveToFlash))
-<BR><BR>[Stack]<UL><LI>Max Depth = 156<LI>Call Chain = Config_SaveToFlash &rArr; FLASH_ProgramWord &rArr; FLASH_WaitForLastOperation &rArr; FLASH_GetBank1Status
+<P><STRONG><a name="[b5]"></a>Config_SaveToFlash</STRONG> (Thumb, 318 bytes, Stack size 96 bytes, car_app.o(.text.Config_SaveToFlash))
+<BR><BR>[Stack]<UL><LI>Max Depth = 148<LI>Call Chain = Config_SaveToFlash &rArr; FLASH_ProgramWord &rArr; FLASH_WaitForLastOperation &rArr; FLASH_GetBank1Status
 </UL>
 <BR>[Calls]<UL><LI><a href="#[c1]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FLASH_ProgramWord
 <LI><a href="#[c0]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;FLASH_Lock
@@ -2111,8 +2113,8 @@ Local Symbols
 <LI><a href="#[a7]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Car_Loop
 </UL>
 
-<P><STRONG><a name="[b7]"></a>UI_DrawMenu</STRONG> (Thumb, 512 bytes, Stack size 200 bytes, car_app.o(.text.UI_DrawMenu))
-<BR><BR>[Stack]<UL><LI>Max Depth = 336 + Unknown Stack Size
+<P><STRONG><a name="[b7]"></a>UI_DrawMenu</STRONG> (Thumb, 566 bytes, Stack size 248 bytes, car_app.o(.text.UI_DrawMenu))
+<BR><BR>[Stack]<UL><LI>Max Depth = 384 + Unknown Stack Size
 <LI>Call Chain = UI_DrawMenu &rArr; snprintf &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[a4]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;OLED_ShowString

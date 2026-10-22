@@ -18,7 +18,7 @@ typedef struct {
     int16_t max_speed;
     int16_t min_speed;
     uint8_t line_mode;
-    uint8_t padding;
+    uint8_t corner_advance_ms;
     uint16_t sensor_min[QTR8A_NUM_SENSORS];
     uint16_t sensor_max[QTR8A_NUM_SENSORS];
     uint32_t checksum;
@@ -36,17 +36,19 @@ static int16_t s_pid_out = 0;
 /* May trang thai xu ly goc cua 90 do */
 typedef enum {
     CORNER_MANEUVER_IDLE = 0,
-    CORNER_MANEUVER_BRAKE,
-    CORNER_MANEUVER_PIVOT
+    CORNER_MANEUVER_ADVANCE,  /* Truon toi: banh xe tien them 1 doan de truc banh toi dinh goc */
+    CORNER_MANEUVER_BRAKE,    /* Phanh gap triet tieu quan tinh tien */
+    CORNER_MANEUVER_PIVOT     /* Quay tai cho quanh truc banh xe */
 } CornerManeuver_t;
 
 static CornerManeuver_t s_corner_maneuver = CORNER_MANEUVER_IDLE;
 static CornerType_t s_active_corner = CORNER_NONE;
 static uint32_t s_corner_step_tick = 0;
+static uint8_t s_corner_advance_ms = 70; /* Thoi gian truon mac dinh 70ms */
 
-/* Menu tap trung toan bo 7 muc cai dat */
+/* Menu tap trung toan bo 9 muc cai dat */
 static uint8_t s_menu_item = 0;
-#define MENU_TOTAL_ITEMS 7
+#define MENU_TOTAL_ITEMS 9
 
 static uint32_t Config_ComputeChecksum(const CarConfig_t *cfg)
 {
@@ -70,7 +72,7 @@ static uint8_t Config_SaveToFlash(void)
     cfg.max_speed = s_pid.max_speed;
     cfg.min_speed = s_pid.min_speed;
     cfg.line_mode = s_line_mode;
-    cfg.padding = 0;
+    cfg.corner_advance_ms = s_corner_advance_ms;
 
     const uint16_t *mins = QTR8A_GetMinValues();
     const uint16_t *maxs = QTR8A_GetMaxValues();
@@ -136,11 +138,20 @@ static uint8_t Config_LoadFromFlash(void)
     s_pid.base_speed = cfg.base_speed;
     s_pid.max_speed = cfg.max_speed;
     s_pid.min_speed = cfg.min_speed;
-    if (s_pid.min_speed > -50)
+    if (s_pid.min_speed > 0)
     {
-        s_pid.min_speed = -55; /* Dam bao luon co du luc phanh/lui khi quay tai cho */
+        s_pid.min_speed = 0;
+    }
+    if (s_pid.min_speed < -80)
+    {
+        s_pid.min_speed = -80;
     }
     s_line_mode = cfg.line_mode;
+    s_corner_advance_ms = cfg.corner_advance_ms;
+    if (s_corner_advance_ms == 0 || s_corner_advance_ms > 200)
+    {
+        s_corner_advance_ms = 70; /* Mac dinh 70ms neu chua tung cai dat */
+    }
 
     QTR8A_SetMinValues(cfg.sensor_min);
     QTR8A_SetMaxValues(cfg.sensor_max);
@@ -221,7 +232,8 @@ static void UI_DrawStopped(void)
 
 /*
  * MAN HINH KHI XE CHAY (RUNNING):
- * To, ro, the thao, de quan sat khi chay theo xe (kem chi bao goc 90 do)
+ * Hien thi truc quan toan dien: Toc do, huong chuyen dong tung banh,
+ * thuoc do do lech line va 2 thanh bar cong suat PWM dong co.
  */
 static void UI_DrawRunning(void)
 {
@@ -232,36 +244,80 @@ static void UI_DrawRunning(void)
     OLED_FillRect(0, 0, 128, 14, OLED_COLOR_WHITE);
     if (s_active_corner == CORNER_LEFT_90)
     {
-        OLED_ShowString(10, 0, "<= 90L TURN <=", 16, OLED_COLOR_BLACK);
+        if (s_corner_maneuver == CORNER_MANEUVER_ADVANCE)
+        {
+            OLED_ShowString(10, 0, "<= 90L TIEN <=", 16, OLED_COLOR_BLACK);
+        }
+        else
+        {
+            OLED_ShowString(10, 0, "<= 90L TURN <=", 16, OLED_COLOR_BLACK);
+        }
     }
     else if (s_active_corner == CORNER_RIGHT_90)
     {
-        OLED_ShowString(10, 0, "=> 90R TURN =>", 16, OLED_COLOR_BLACK);
+        if (s_corner_maneuver == CORNER_MANEUVER_ADVANCE)
+        {
+            OLED_ShowString(10, 0, "=> 90R TIEN =>", 16, OLED_COLOR_BLACK);
+        }
+        else
+        {
+            OLED_ShowString(10, 0, "=> 90R TURN =>", 16, OLED_COLOR_BLACK);
+        }
     }
     else
     {
         OLED_ShowString(20, 0, "= RUNNING =", 16, OLED_COLOR_BLACK);
     }
 
-    /* Dong 1: Toc do thuc te 2 banh xe */
-    snprintf(buf, sizeof(buf), "SPEED  L:%3d  R:%3d", s_speed_left, s_speed_right);
-    OLED_ShowString(4, 18, buf, 8, OLED_COLOR_WHITE);
+    /* Dong 1: Toc do & Huong chuyen dong tung banh xe (L và R) */
+    const char *st_l;
+    if (s_corner_maneuver == CORNER_MANEUVER_BRAKE) st_l = "PHAN";
+    else if (s_corner_maneuver == CORNER_MANEUVER_ADVANCE) st_l = "TRON";
+    else if (s_speed_left > 0) st_l = "TIEN";
+    else if (s_speed_left < 0) st_l = "LUI ";
+    else st_l = "DUNG";
+
+    const char *st_r;
+    if (s_corner_maneuver == CORNER_MANEUVER_BRAKE) st_r = "PHAN";
+    else if (s_corner_maneuver == CORNER_MANEUVER_ADVANCE) st_r = "TRON";
+    else if (s_speed_right > 0) st_r = "TIEN";
+    else if (s_speed_right < 0) st_r = "LUI ";
+    else st_r = "DUNG";
+
+    snprintf(buf, sizeof(buf), "L:%+3d %-4s R:%+3d %-4s", s_speed_left, st_l, s_speed_right, st_r);
+    OLED_ShowString(1, 16, buf, 8, OLED_COLOR_WHITE);
 
     /* Dong 2: Thuoc do do lech tam line truc quan (Visual Gauge) */
-    OLED_ShowChar(0, 32, 'L', 8, OLED_COLOR_WHITE);
-    OLED_ShowChar(122, 32, 'R', 8, OLED_COLOR_WHITE);
-    OLED_DrawLine(10, 35, 118, 35, OLED_COLOR_WHITE);
-    OLED_DrawLine(64, 31, 64, 39, OLED_COLOR_WHITE); /* Vach tim trung tam */
+    OLED_ShowChar(0, 26, 'L', 8, OLED_COLOR_WHITE);
+    OLED_ShowChar(122, 26, 'R', 8, OLED_COLOR_WHITE);
+    OLED_DrawLine(10, 29, 118, 29, OLED_COLOR_WHITE);
+    OLED_DrawLine(64, 26, 64, 32, OLED_COLOR_WHITE); /* Vach tim trung tam */
 
     int16_t p = s_line_pos;
     if (p < 0) p = 0;
     if (p > 7000) p = 7000;
     uint8_t cur_x = 10 + (uint8_t)((uint32_t)p * 108U / 7000U);
-    OLED_FillRect(cur_x - 2, 33, 5, 5, OLED_COLOR_WHITE); /* Con tro lech tam */
+    OLED_FillRect(cur_x - 2, 27, 5, 5, OLED_COLOR_WHITE); /* Con tro lech tam */
 
-    /* Dong 3: Sai so vach line va nut bam dung */
-    snprintf(buf, sizeof(buf), "Err: %+5d   (B1:DUNG)", s_line_pos - 3500);
-    OLED_ShowString(4, 46, buf, 8, OLED_COLOR_WHITE);
+    /* Dong 3: Sai so vach line va mau line */
+    snprintf(buf, sizeof(buf), "Err: %+5d   Line:%s", s_line_pos - 3500, (s_line_mode == QTR8A_LINE_BLACK_WHITE) ? "Den" : "Trg");
+    OLED_ShowString(4, 38, buf, 8, OLED_COLOR_WHITE);
+
+    /* Dong 4: Huong dan nut dung */
+    OLED_ShowString(10, 48, "(B1: DUNG KHAN CAP)", 8, OLED_COLOR_WHITE);
+
+    /* Dong 5: 2 thanh do do thi cong suat PWM 2 banh (Power Bars) o day man hinh */
+    int16_t abs_l = (s_speed_left < 0) ? -s_speed_left : s_speed_left;
+    if (abs_l > 100) abs_l = 100;
+    uint8_t bar_l = (uint8_t)((uint32_t)abs_l * 54U / 100U);
+    OLED_DrawRect(4, 58, 56, 5, OLED_COLOR_WHITE);
+    if (bar_l > 0) OLED_FillRect(5, 59, bar_l, 3, OLED_COLOR_WHITE);
+
+    int16_t abs_r = (s_speed_right < 0) ? -s_speed_right : s_speed_right;
+    if (abs_r > 100) abs_r = 100;
+    uint8_t bar_r = (uint8_t)((uint32_t)abs_r * 54U / 100U);
+    OLED_DrawRect(68, 58, 56, 5, OLED_COLOR_WHITE);
+    if (bar_r > 0) OLED_FillRect(69, 59, bar_r, 3, OLED_COLOR_WHITE);
 
     OLED_Update();
 }
@@ -298,10 +354,12 @@ static void UI_DrawMenu(void)
     snprintf(labels[0], sizeof(labels[0]), "1.Toc do:  %2d%%", s_pid.base_speed);
     snprintf(labels[1], sizeof(labels[1]), "2.Kp:      %.3f", s_pid.kp);
     snprintf(labels[2], sizeof(labels[2]), "3.Kd:      %.3f", s_pid.kd);
-    snprintf(labels[3], sizeof(labels[3]), "4.Line:    %s", (s_line_mode == QTR8A_LINE_BLACK_WHITE) ? "Den" : "Trang");
-    snprintf(labels[4], sizeof(labels[4]), "5.Calib:   [Start]");
-    snprintf(labels[5], sizeof(labels[5]), "6.Luu:     [Flash]");
-    snprintf(labels[6], sizeof(labels[6]), "7.Thoat ve Trang chu");
+    snprintf(labels[3], sizeof(labels[3]), "4.Phanh:   %2d%%", (int16_t)(-s_pid.min_speed));
+    snprintf(labels[4], sizeof(labels[4]), "5.Truon:  %3dms", s_corner_advance_ms);
+    snprintf(labels[5], sizeof(labels[5]), "6.Line:    %s", (s_line_mode == QTR8A_LINE_BLACK_WHITE) ? "Den" : "Trang");
+    snprintf(labels[6], sizeof(labels[6]), "7.Calib:   [Start]");
+    snprintf(labels[7], sizeof(labels[7]), "8.Luu:     [Flash]");
+    snprintf(labels[8], sizeof(labels[8]), "9.Thoat ve Trang chu");
 
     for (uint8_t i = 0; i < 4; i++)
     {
@@ -473,24 +531,52 @@ void Car_Loop(void)
                     CornerType_t detected = QTR8A_DetectCorner(s_sensors);
                     if (detected == CORNER_NONE && !on_line)
                     {
-                        if (s_line_pos <= 1000) detected = CORNER_LEFT_90;
-                        else if (s_line_pos >= 6000) detected = CORNER_RIGHT_90;
+                        if (s_line_pos <= 2000) detected = CORNER_LEFT_90;
+                        else if (s_line_pos >= 5000) detected = CORNER_RIGHT_90;
                     }
 
                     if (detected != CORNER_NONE)
                     {
                         s_active_corner = detected;
-                        s_corner_maneuver = CORNER_MANEUVER_BRAKE;
                         s_corner_step_tick = now;
-                        Motor_Brake(); /* Phanh gap de triet tieu quan tinh tien */
+
+                        if (s_corner_advance_ms > 0)
+                        {
+                            /* Pha 1: Truon toi dinh goc (Forward Advance) de truc banh xe tien toi dung dinh goc */
+                            s_corner_maneuver = CORNER_MANEUVER_ADVANCE;
+                            s_speed_left = s_pid.base_speed;
+                            s_speed_right = s_pid.base_speed;
+                            Motor_SetSpeed(s_speed_left, s_speed_right);
+                        }
+                        else
+                        {
+                            /* Bo qua pha truon neu cai dat = 0ms, phanh ngay */
+                            s_corner_maneuver = CORNER_MANEUVER_BRAKE;
+                            Motor_Brake();
+                        }
                     }
                 }
 
-                if (s_corner_maneuver == CORNER_MANEUVER_BRAKE)
+                if (s_corner_maneuver == CORNER_MANEUVER_ADVANCE)
                 {
-                    /* Phanh trong 15ms de giam van toc xe ve 0 truoc khi quay tai cho */
+                    /* Duy tri toc do tien deu de dua truc banh xe toi dung dinh goc cua */
+                    s_speed_left = s_pid.base_speed;
+                    s_speed_right = s_pid.base_speed;
+                    Motor_SetSpeed(s_speed_left, s_speed_right);
+
+                    if (now - s_corner_step_tick >= s_corner_advance_ms)
+                    {
+                        s_corner_maneuver = CORNER_MANEUVER_BRAKE;
+                        s_corner_step_tick = now;
+                        Motor_Brake(); /* Phanh gap de triet tieu quan tinh tien ngay tai dinh goc */
+                    }
+                }
+                else if (s_corner_maneuver == CORNER_MANEUVER_BRAKE)
+                {
+                    /* Thoi gian phanh chu dong (25ms - 35ms) de triet tieu quan tinh tien cua xe nang JGB37-520 */
+                    uint32_t brake_time = 25 + (uint32_t)(-s_pid.min_speed) * 15U / 100U;
                     Motor_Brake();
-                    if (now - s_corner_step_tick >= 15)
+                    if (now - s_corner_step_tick >= brake_time)
                     {
                         s_corner_maneuver = CORNER_MANEUVER_PIVOT;
                         s_corner_step_tick = now;
@@ -498,44 +584,50 @@ void Car_Loop(void)
                 }
                 else if (s_corner_maneuver == CORNER_MANEUVER_PIVOT)
                 {
-                    /* Tinh toc do quay tai cho (Spin Turn Speed) */
-                    int16_t p_spd = s_pid.base_speed + 10;
-                    if (p_spd < 50) p_spd = 50;
-                    if (p_spd > 70) p_spd = 70;
+                    /* Tinh toc do quay tai cho (Spin Turn Speed) theo muc phanh da cai dat */
+                    int16_t p_spd = -s_pid.min_speed;
+                    if (p_spd < 55) p_spd = 55;
+                    if (p_spd > 75) p_spd = 75;
 
                     if (s_active_corner == CORNER_LEFT_90)
                     {
-                        /* Quay trai tai cho: Banh trai lui, banh phai tien */
-                        s_speed_left = -p_spd;
-                        s_speed_right = p_spd;
+                        /* Quay sang phia trai (huong mat 0..1):
+                         * Quy uoc dong co thuc te tren xe (da kiem chung qua pid.c):
+                         * Motor A (speed_left) TIEN (+), Motor B (speed_right) LUI (-) */
+                        s_speed_left = p_spd;
+                        s_speed_right = -p_spd;
                     }
                     else
                     {
-                        /* Quay phai tai cho: Banh trai tien, banh phai lui */
-                        s_speed_left = p_spd;
-                        s_speed_right = -p_spd;
+                        /* Quay sang phia phai (huong mat 6..7):
+                         * Motor A (speed_left) LUI (-), Motor B (speed_right) TIEN (+) */
+                        s_speed_left = -p_spd;
+                        s_speed_right = p_spd;
                     }
                     Motor_SetSpeed(s_speed_left, s_speed_right);
 
                     /* Dieu kien thoat goc cua:
-                     * 1. Phai quay it nhat 40ms de thoat khoi dinh cua cu
-                     * 2. Va cac mat trung tam (mat 3 hoac 4) da bat duoc vach line moi
-                     * 3. Hoac timeout bao ve 800ms tranh quay vo tan neu bi nhac khoi san
+                     * 1. Phai quay it nhat 120ms de thoat khoi vung goc cu va tao da xoay cho xe 1kg JGB37
+                     * 2. Va cac mat trung tam (mat 2, 3, 4 hoac 5) da bat lai duoc vach line moi
+                     * 3. Hoac timeout bao ve 750ms tranh quay vo tan neu bi nhac khoi san
                      */
                     uint32_t elapsed = now - s_corner_step_tick;
-                    if (elapsed >= 40 && (s_sensors[3] > 380 || s_sensors[4] > 380))
+                    if (elapsed >= 120)
                     {
-                        /* Da bat duoc line moi o trung tam! */
-                        s_corner_maneuver = CORNER_MANEUVER_IDLE;
-                        s_active_corner = CORNER_NONE;
-                        PID_Reset(&s_pid); /* Xoa tich phan I de khong bi giat line */
-                    }
-                    else if (elapsed >= 800)
-                    {
-                        /* Timeout an toan */
-                        s_corner_maneuver = CORNER_MANEUVER_IDLE;
-                        s_active_corner = CORNER_NONE;
-                        PID_Reset(&s_pid);
+                        if (on_line && (s_sensors[2] > 280 || s_sensors[3] > 280 || s_sensors[4] > 280 || s_sensors[5] > 280))
+                        {
+                            /* Da bat duoc line moi o trung tam! */
+                            s_corner_maneuver = CORNER_MANEUVER_IDLE;
+                            s_active_corner = CORNER_NONE;
+                            PID_Reset(&s_pid); /* Xoa tich phan I de khong bi giat line */
+                        }
+                        else if (elapsed >= 750)
+                        {
+                            /* Timeout an toan */
+                            s_corner_maneuver = CORNER_MANEUVER_IDLE;
+                            s_active_corner = CORNER_NONE;
+                            PID_Reset(&s_pid);
+                        }
                     }
                 }
                 else
@@ -592,13 +684,25 @@ void Car_Loop(void)
                     case 2: /* Kd */
                         s_pid.kd += 0.020f;
                         break;
-                    case 3: /* Mau Line */
+                    case 3: /* Phanh (Tang luc phanh: 0% -> 5% -> ... -> 80%) */
+                    {
+                        int16_t brk = -s_pid.min_speed;
+                        brk += 5;
+                        if (brk > 80) brk = 80;
+                        s_pid.min_speed = -brk;
+                        break;
+                    }
+                    case 4: /* Truon (Tang thoi gian truon toi dinh goc: 0ms -> 10ms -> ... -> 200ms) */
+                        if (s_corner_advance_ms <= 190) s_corner_advance_ms += 10;
+                        else s_corner_advance_ms = 200;
+                        break;
+                    case 5: /* Mau Line */
                         s_line_mode = !s_line_mode;
                         break;
-                    case 4: /* Calib */
+                    case 6: /* Calib */
                         s_state = CAR_STATE_CALIBRATING;
                         break;
-                    case 5: /* Save Flash */
+                    case 7: /* Save Flash */
                     {
                         uint8_t ok = Config_SaveToFlash();
                         OLED_Clear();
@@ -614,7 +718,7 @@ void Car_Loop(void)
                         delay_ms(700);
                         break;
                     }
-                    case 6: /* Thoat ve Trang chu */
+                    case 8: /* Thoat ve Trang chu */
                         Config_SaveToFlash();
                         s_state = CAR_STATE_STOPPED;
                         break;
@@ -641,13 +745,25 @@ void Car_Loop(void)
                         s_pid.kd -= 0.020f;
                         if (s_pid.kd < 0.0f) s_pid.kd = 0.0f;
                         break;
-                    case 3: /* Mau Line */
+                    case 3: /* Phanh (Giam luc phanh: 80% -> 75% -> ... -> 0%) */
+                    {
+                        int16_t brk = -s_pid.min_speed;
+                        brk -= 5;
+                        if (brk < 0) brk = 0;
+                        s_pid.min_speed = -brk;
+                        break;
+                    }
+                    case 4: /* Truon (Giam thoi gian truon toi dinh goc: 200ms -> 190ms -> ... -> 0ms) */
+                        if (s_corner_advance_ms >= 10) s_corner_advance_ms -= 10;
+                        else s_corner_advance_ms = 0;
+                        break;
+                    case 5: /* Mau Line */
                         s_line_mode = !s_line_mode;
                         break;
-                    case 4: /* Calib */
+                    case 6: /* Calib */
                         s_state = CAR_STATE_CALIBRATING;
                         break;
-                    case 5: /* Save Flash */
+                    case 7: /* Save Flash */
                     {
                         uint8_t ok = Config_SaveToFlash();
                         OLED_Clear();
@@ -663,7 +779,7 @@ void Car_Loop(void)
                         delay_ms(700);
                         break;
                     }
-                    case 6: /* Thoat ve Trang chu */
+                    case 8: /* Thoat ve Trang chu */
                         Config_SaveToFlash();
                         s_state = CAR_STATE_STOPPED;
                         break;
